@@ -1,5 +1,6 @@
 
 # Project Name : Sports Store
+## Organization Name : sprort-store
 
 ### This Website is an  e-commercial store for sport equipment's and more.
 
