@@ -116,11 +116,36 @@ function renderImageCat()
 {
 
 }
-// fill image item in its category in main page 
-function renderImagCatMain()
-{
+// // fill image item in its category in main page 
 
-}
+// let clothesCatIn;
+// let machineCatIn;
+// let shoesCatIn;
+// let toolsCatIn;
+
+
+// console.log(clothes)
+// function renderImagCatMain()
+// {
+// clothesCatIn=generateprductImage()[0];
+// machineCatIn=generateprductImage()[1];
+// shoesCatIn = generateprductImage() [2];
+// toolsCatIn= generateprductImage()[3];
+
+// let clothesdivEl =document.getElementById("clothescat")
+// let machinedivEl =document.getElementById("machinecat")
+// let shoesdivEl =document.getElementById("shoescat")
+// let toolsdivEl =document.getElementById("toolscat")
+  
+// let imgEl=document.createElement('img');
+// imgEl.appendChild(clothesdivEl)
+// imgEl.setAttribute('src', clothes)
+
+
+
+
+
+// }
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will
 // Call that handleSubmit method above and kick off the whole process

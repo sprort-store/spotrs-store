@@ -88,9 +88,9 @@ function generateCatalog() {
 
 
   new Product("img/clothes/Girls.jpg", "Girls", 'clothes');
-  new Product("img/clothes/Q4 Men's Urban Style Outfit", "Q4 Mens Urban Style Outfit", 'clothes');
+  new Product("img/clothes/Q4 Men's Urban Style Outfit.jpg", "Q4 Mens Urban Style Outfit", 'clothes');
   new Product("img/clothes/Q5.jpg", "Q5", 'clothes');
-  new Product("img/clothes/Q7 Gucci Fashion.jpg.jpg", "clothes/Q7 Gucci Fashion", 'clothes');
+  new Product("img/clothes/Q7 Gucci Fashion.jpg", "clothes/Q7 Gucci Fashion", 'clothes');
   new Product("img/clothes/Q9.jpg", "clothes/Q9", 'clothes');
   new Product("img/clothes/Q10.jpg", "clothes/Q10", 'clothes');
   new Product("img/clothes/Q11.jpg", "Q11", 'clothes');
@@ -117,16 +117,16 @@ function generateCatalog() {
   new Product("img/machine/M8.jpg", "M8", 'machine');
   new Product("img/machine/M9.jpg", "M9", 'machine');
   new Product("img/machine/M10.jpg", "M10", 'machine');
-  new Product("img/ shoes/S1.jpg", "S1", 'shoes');
-  new Product("img/ shoes/S2.jpg", "S2", 'shoes');
-  new Product("img/ shoes/S3.jpg", "S3", 'shoes');
-  new Product("img/ shoes/S4.jpg", "S4", 'shoes');
-  new Product("img/ shoes/S5.jpg", "S5", 'shoes');
-  new Product("img/ shoes/S6.jpg", "S6", 'shoes');
-  new Product("img/ shoes/S7.jpg", "S7", 'shoes');
-  new Product("img/ shoes/S8.jpeg", "S8", 'shoes');
-  new Product("img/ shoes/S9.jpg", "S9", 'shoes');
-  new Product("img/ shoes/S10.jpg", "S10", 'shoes');
+  new Product("img/shoes/S1.jpg", "S1", 'shoes');
+  new Product("img/shoes/S2.jpg", "S2", 'shoes');
+  new Product("img/shoes/S3.jpg", "S3", 'shoes');
+  new Product("img/shoes/S4.jpg", "S4", 'shoes');
+  new Product("img/shoes/S5.jpg", "S5", 'shoes');
+  new Product("img/shoes/S6.jpg", "S6", 'shoes');
+  new Product("img/shoes/S7.jpg", "S7", 'shoes');
+  new Product("img/shoes/S8.jpeg", "S8", 'shoes');
+  new Product("img/shoes/S9.jpg", "S9", 'shoes');
+  new Product("img/shoes/S10.jpg", "S10", 'shoes');
 
 
 
@@ -143,9 +143,76 @@ function generateCatalog() {
     // else { console.log('Wrong category'); }
   }
 }
+
+// fill image item in its category in main page 
+
+let clothesCatIn;
+let machineCatIn;
+let shoesCatIn;
+let toolsCatIn;
+
+
+let ShOthbuttEl= document.getElementById("ShOthbutt")
+ShOthbuttEl.addEventListener('click', showOthers);
+
+function showOthers(){
+  clothesdivEl.textContent=""
+   machinedivEl.textContent =""
+   shoesdivEl.textContent =""
+   toolsdivEl.textContent =""
+
+
+  generateprductImage();
+  renderImagCatMain();
+  
+}
+
+let clothesdivEl =document.getElementById("clothescat")
+let machinedivEl =document.getElementById("machinecat")
+let shoesdivEl =document.getElementById("shoescat")
+let toolsdivEl =document.getElementById("toolscat")
+function renderImagCatMain()
+{
+clothesCatIn=generateprductImage()[0];
+machineCatIn=generateprductImage()[1];
+shoesCatIn = generateprductImage() [2];
+toolsCatIn= generateprductImage()[3];
+
+
+
+
+  
+let clothesimgEl=document.createElement('img');
+clothesimgEl.setAttribute('src', chlothes[clothesCatIn].filePath)
+clothesdivEl.appendChild(clothesimgEl);
+
+
+let machineimgEl=document.createElement('img');
+machineimgEl.setAttribute('src', machine[machineCatIn].filePath)
+machinedivEl.appendChild(machineimgEl);
+
+let shoesimgEl=document.createElement('img');
+shoesimgEl.setAttribute('src', shoes[shoesCatIn].filePath)
+shoesdivEl.appendChild(shoesimgEl);
+
+let toolsimgEl=document.createElement('img');
+toolsimgEl.setAttribute('src', tools[toolsCatIn].filePath)
+toolsdivEl.appendChild(toolsimgEl);
+
+
+
+
+}
+
+
+
+
+
+
 generateCatalog();
 addToCategory();
 generateprductImage()
+renderImagCatMain();
 
 console.log(chlothes);
 console.log(shoes);
