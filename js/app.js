@@ -133,11 +133,11 @@ function generateCatalog() {
  function addToCategory() {
   for (let i = 0; i < Product.allProducts.length; i++) {
     if (Product.allProducts[i].category == 'clothes') {
-      chlothes.push(Product.allProducts[i]);
+      chlothes[i%10]=Product.allProducts[i];
     }
-     if (Product.allProducts[i].category == 'shoes') { shoes.push(Product.allProducts[i]); }
-     if (Product.allProducts[i].category == 'machine') { machine.push(Product.allProducts[i]); }
-     if (Product.allProducts[i].category == 'tools') { tools.push(Product.allProducts[i]); }
+     if (Product.allProducts[i].category == 'shoes') { shoes[i%10]=Product.allProducts[i]; }
+     if (Product.allProducts[i].category == 'machine') { machine[i%10]=Product.allProducts[i]; }
+     if (Product.allProducts[i].category == 'tools') { tools[i%10]=Product.allProducts[i]; }
     // else { console.log('Wrong category'); }
   }
 }
