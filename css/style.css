@@ -63,7 +63,7 @@ h1{
     float: left;
     margin-left: 20px;
     margin-top: 20px;
-    position: relative;
+    /* position: relative; */
     width:60px;
 }
 h1 em{
@@ -97,6 +97,8 @@ ul li:hover{
     position: relative;
     left: 50%;
     top: 55%;
+    margin-top: 60px;
+    margin-left: 60px;
     background-image: url('/images/slide1.jpg');
     background-size: 100% 100%;
     animation: slider 11s infinite linear;
@@ -137,3 +139,6 @@ img{
     display: block;
     
 }
+header{position: relative;}
+main{display: block;
+margin-top: 100px;}

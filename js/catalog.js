@@ -116,6 +116,86 @@ function renderImageCat()
 {
 
 }
+let clothesCatIn;
+let machineCatIn;
+let shoesCatIn;
+let toolsCatIn;
+
+
+let ShOthbuttEl= document.getElementById("ShOthbutt")
+ShOthbuttEl.addEventListener('click', showOthers);
+
+function showOthers(){
+  clothesdivEl.textContent="";
+   machinedivEl.textContent ="";
+   shoesdivEl.textContent ="";
+   toolsdivEl.textContent ="";
+
+
+
+  generateprductImage();
+  renderImagCatMain();
+  
+}
+
+let clothesdivEl =document.getElementById("clothescat")
+let machinedivEl =document.getElementById("machinecat")
+let shoesdivEl =document.getElementById("shoescat")
+let toolsdivEl =document.getElementById("toolscat")
+function renderImagCatMain()
+{
+clothesCatIn=generateprductImage()[0];
+machineCatIn=generateprductImage()[1];
+shoesCatIn = generateprductImage() [2];
+toolsCatIn= generateprductImage()[3];
+
+let aEL=document.createElement('a');
+aEL.textContent='Clothes category';
+aEL.href='category.html';
+clothesdivEl.appendChild(aEL);
+let aEL1=document.createElement('a');
+aEL1.textContent='Machine category';
+aEL1.href='category.html';
+machinedivEl.appendChild(aEL1);
+let aEL3=document.createElement('a');
+aEL3.textContent='Shoes category';
+aEL3.href='category.html';
+shoesdivEl.appendChild(aEL3);
+let aEL4=document.createElement('a');
+aEL4.textContent='Tools category';
+aEL4.href='category.html';
+toolsdivEl.appendChild(aEL4);
+
+
+
+
+  
+let clothesimgEl=document.createElement('img');
+clothesimgEl.setAttribute('src', chlothes[clothesCatIn].filePath)
+clothesdivEl.appendChild(clothesimgEl);
+
+
+let machineimgEl=document.createElement('img');
+machineimgEl.setAttribute('src', machine[machineCatIn].filePath)
+machinedivEl.appendChild(machineimgEl);
+
+let shoesimgEl=document.createElement('img');
+shoesimgEl.setAttribute('src', shoes[shoesCatIn].filePath)
+shoesdivEl.appendChild(shoesimgEl);
+
+let toolsimgEl=document.createElement('img');
+toolsimgEl.setAttribute('src', tools[toolsCatIn].filePath)
+toolsdivEl.appendChild(toolsimgEl);
+
+
+
+
+}
+
+renderImagCatMain();
+
+
+
 // // fill image item in its category in main page 
 
 // let clothesCatIn;
@@ -149,9 +229,9 @@ function renderImageCat()
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will
 // Call that handleSubmit method above and kick off the whole process
-const catalogForm = document.getElementById('catalog');
-catalogForm.addEventListener('submit', handleSubmit);
+//const catalogForm = document.getElementById('catalog');
+//catalogForm.addEventListener('submit', handleSubmit);
 
 // Before anything else of value can happen, we need to fill in the select
 // drop down list in the form.
-populateForm();
+//populateForm();

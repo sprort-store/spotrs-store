@@ -146,73 +146,12 @@ function generateCatalog() {
 
 // fill image item in its category in main page 
 
-let clothesCatIn;
-let machineCatIn;
-let shoesCatIn;
-let toolsCatIn;
-
-
-let ShOthbuttEl= document.getElementById("ShOthbutt")
-ShOthbuttEl.addEventListener('click', showOthers);
-
-function showOthers(){
-  clothesdivEl.textContent=""
-   machinedivEl.textContent =""
-   shoesdivEl.textContent =""
-   toolsdivEl.textContent =""
-
-
-  generateprductImage();
-  renderImagCatMain();
-  
-}
-
-let clothesdivEl =document.getElementById("clothescat")
-let machinedivEl =document.getElementById("machinecat")
-let shoesdivEl =document.getElementById("shoescat")
-let toolsdivEl =document.getElementById("toolscat")
-function renderImagCatMain()
-{
-clothesCatIn=generateprductImage()[0];
-machineCatIn=generateprductImage()[1];
-shoesCatIn = generateprductImage() [2];
-toolsCatIn= generateprductImage()[3];
-
-
-
-
-  
-let clothesimgEl=document.createElement('img');
-clothesimgEl.setAttribute('src', chlothes[clothesCatIn].filePath)
-clothesdivEl.appendChild(clothesimgEl);
-
-
-let machineimgEl=document.createElement('img');
-machineimgEl.setAttribute('src', machine[machineCatIn].filePath)
-machinedivEl.appendChild(machineimgEl);
-
-let shoesimgEl=document.createElement('img');
-shoesimgEl.setAttribute('src', shoes[shoesCatIn].filePath)
-shoesdivEl.appendChild(shoesimgEl);
-
-let toolsimgEl=document.createElement('img');
-toolsimgEl.setAttribute('src', tools[toolsCatIn].filePath)
-toolsdivEl.appendChild(toolsimgEl);
-
-
-
-
-}
-
-
-
-
 
 
 generateCatalog();
 addToCategory();
 generateprductImage()
-renderImagCatMain();
+
 
 console.log(chlothes);
 console.log(shoes);
