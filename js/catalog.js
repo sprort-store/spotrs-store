@@ -3,10 +3,14 @@
 'use strict';
 
 // Set up an empty cart for use on this page.
-const cart = new Cart([]);
+//const cart = new Cart([]);
 
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
+let clothsection = document.getElementById('clothesSection')
+let machinesectionEl = document.getElementById('machinesection')
+let shosesectionEl = document.getElementById('shoseSection')
+let toolsectionEl = document.getElementById('toolsSection')
 function populateForm() {
 
   let oldData = JSON.parse(localStorage.getItem('cart'));
@@ -111,28 +115,47 @@ function updateCartPreview() {
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
-// fill image item in its category in category page 
 function renderImageCat()
 {
 
+console.log(chlothes)
+for( let j=0; j<chlothes.length ; j++)
+{
+  
+  let clothdivEl = document.createElement('div');
+  clothsection.appendChild(clothdivEl);
+  // let madivEl = document.createElement('div')
+  // machinesectionEl.appendChild(madivEl)
+  let clothesimgEl=document.createElement('img');
+  clothesimgEl.setAttribute('src',chlothes[j].filePath);
+  clothdivEl.appendChild(clothesimgEl);
 }
+// for (let i = 0; i<machine.length;i++)
+// {
+//   let clothdivEl = document.createElement('div');
+//   machinesectionEl.appendChild(clothdivEl);
+// }
+}
+
 let clothesCatIn;
 let machineCatIn;
 let shoesCatIn;
 let toolsCatIn;
 
 
-let ShOthbuttEl= document.getElementById("ShOthbutt")
-ShOthbuttEl.addEventListener('click', showOthers);
+let ShOthbuttEl= document.getElementById('ShOthbutt')
+if(ShOthbuttEl)
+{ShOthbuttEl.addEventListener('click', showOthers , false);}
 
-function showOthers(){
+
+
+ function showOthers()
+ {
+  
   clothesdivEl.textContent="";
    machinedivEl.textContent ="";
    shoesdivEl.textContent ="";
    toolsdivEl.textContent ="";
-
-
-
   generateprductImage();
   renderImagCatMain();
   
@@ -146,8 +169,10 @@ function renderImagCatMain()
 {
 clothesCatIn=generateprductImage()[0];
 machineCatIn=generateprductImage()[1];
-shoesCatIn = generateprductImage() [2];
+shoesCatIn = generateprductImage()[2];
 toolsCatIn= generateprductImage()[3];
+//if(clothesdivEl.textContent !== null || machinedivEl.textContent !== null || shoesdivEl.textContent !==null || toolsdivEl.textContent !==null)
+  
 
 let aEL=document.createElement('a');
 aEL.textContent='Clothes category';
@@ -192,8 +217,18 @@ toolsdivEl.appendChild(toolsimgEl);
 
 }
 
-renderImagCatMain();
+// fill image item in its category in category page 
 
+
+// fill image item in its category in main page 
+
+
+
+generateCatalog();
+addToCategory();
+generateprductImage()
+renderImageCat();
+renderImagCatMain();
 
 
 // // fill image item in its category in main page 
