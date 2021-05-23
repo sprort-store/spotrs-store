@@ -89,16 +89,18 @@ ul li:hover{
     margin-top: 2px;
 }
 
+
 .slideShow{
     width: 90%;
     height: 400px;
     transform: translate(-50%, -50%);
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 55%;
     background-image: url('/images/slide1.jpg');
     background-size: 100% 100%;
     animation: slider 11s infinite linear;
+    display: block;
 }
 @keyframes slider{
     0%{
@@ -115,3 +117,23 @@ ul li:hover{
     }
 }
 
+.categories div{
+    width:200px;
+    height: 150px;
+    display: inline;
+    float: left;
+    position: relative;
+    
+}
+
+img{
+    width:200px;
+    height: 150px;
+}
+
+
+ 
+.categories{
+    display: block;
+    
+}
