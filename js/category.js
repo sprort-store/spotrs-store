@@ -4,11 +4,12 @@ let clothsection = document.getElementById('clothesSection')
 let machinesectionEl = document.getElementById('machinesection')
 let shosesectionEl = document.getElementById('shoseSection')
 let toolsectionEl = document.getElementById('toolsSection')
+generateCatalog();
+  addToCategory();
 function renderImageCat()
 {
  
-  generateCatalog();
-  addToCategory();
+  
 
   
 console.log(chlothes)
