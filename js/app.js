@@ -48,7 +48,7 @@ Cart.prototype.removeItem = function (item) {
   // Note: You will have to decide what kind of parameter to pass in here!
 };
 function generateprductImage() {
-let randomIndex=[];
+  let randomIndex=[];
 let clothesRandomVar=Math.floor(Math.random() * chlothes.length);
 let machineRandomVar=Math.floor(Math.random() * machine.length);
 let shoesRandomVar=Math.floor(Math.random() * shoes.length);

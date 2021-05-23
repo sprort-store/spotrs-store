@@ -7,10 +7,28 @@
 
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
+
+
+
+let clothesdivEl =document.getElementById("clothescat")
+let machinedivEl =document.getElementById("machinecat")
+let shoesdivEl =document.getElementById("shoescat")
+let toolsdivEl =document.getElementById("toolscat")
+
 let clothsection = document.getElementById('clothesSection')
 let machinesectionEl = document.getElementById('machinesection')
 let shosesectionEl = document.getElementById('shoseSection')
 let toolsectionEl = document.getElementById('toolsSection')
+
+
+
+let clothesCatIn;
+let machineCatIn;
+let shoesCatIn;
+let toolsCatIn;
+
+
+
 function populateForm() {
 
   let oldData = JSON.parse(localStorage.getItem('cart'));
@@ -115,9 +133,14 @@ function updateCartPreview() {
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
+
+
 function renderImageCat()
 {
+ 
+ 
 
+  
 console.log(chlothes)
 for( let j=0; j<chlothes.length ; j++)
 {
@@ -135,38 +158,74 @@ for( let j=0; j<chlothes.length ; j++)
 //   let clothdivEl = document.createElement('div');
 //   machinesectionEl.appendChild(clothdivEl);
 // }
+
+
+
+for( let j=0; j<machine.length ; j++)
+{
+  
+  let machdivEl = document.createElement('div');
+  machinesection.appendChild(machdivEl);
+  // let madivEl = document.createElement('div')
+  // machinesectionEl.appendChild(madivEl)
+  let machimgEl=document.createElement('img');
+  machimgEl.setAttribute('src',machine[j].filePath);
+  machdivEl.appendChild(machimgEl);
+}
+for( let j=0; j<shoes.length ; j++)
+{
+  
+  let shodivEl = document.createElement('div');
+  shoseSection.appendChild(shodivEl);
+  let shoimgEl=document.createElement('img');
+  shoimgEl.setAttribute('src',shoes[j].filePath);
+  shodivEl.appendChild(shoimgEl);
+}
+for( let j=0; j<tools.length ; j++)
+{
+  
+  let toodivEl = document.createElement('div');
+  toolsSection.appendChild(toodivEl);
+  let tooimgEl=document.createElement('img');
+  tooimgEl.setAttribute('src',tools[j].filePath);
+  toodivEl.appendChild(tooimgEl);
+}
 }
 
-let clothesCatIn;
-let machineCatIn;
-let shoesCatIn;
-let toolsCatIn;
+
+// let clothesCatIn;
+// let machineCatIn;
+// let shoesCatIn;
+// let toolsCatIn;
 
 
 let ShOthbuttEl= document.getElementById('ShOthbutt')
-if(ShOthbuttEl)
-{ShOthbuttEl.addEventListener('click', showOthers , false);}
+if(ShOthbuttEl){ShOthbuttEl.addEventListener('click', showOthers,false );
+}
+
+generateCatalog();
+addToCategory();
+renderImagCatMain();
+
 
 
 
  function showOthers()
  {
-  
-  clothesdivEl.textContent="";
+   
+   clothesdivEl.textContent="";
    machinedivEl.textContent ="";
    shoesdivEl.textContent ="";
    toolsdivEl.textContent ="";
-  generateprductImage();
-  renderImagCatMain();
-  
+   
+   generateprductImage();
+   renderImagCatMain();
+
+   
 }
 
-let clothesdivEl =document.getElementById("clothescat")
-let machinedivEl =document.getElementById("machinecat")
-let shoesdivEl =document.getElementById("shoescat")
-let toolsdivEl =document.getElementById("toolscat")
 function renderImagCatMain()
-{
+{ 
 clothesCatIn=generateprductImage()[0];
 machineCatIn=generateprductImage()[1];
 shoesCatIn = generateprductImage()[2];
@@ -176,25 +235,25 @@ toolsCatIn= generateprductImage()[3];
 
 let aEL=document.createElement('a');
 aEL.textContent='Clothes category';
-aEL.href='category.html';
+aEL.href='category.html#clothesSection';
 clothesdivEl.appendChild(aEL);
 let aEL1=document.createElement('a');
 aEL1.textContent='Machine category';
-aEL1.href='category.html';
+aEL1.href='category.html#machinesection';
 machinedivEl.appendChild(aEL1);
 let aEL3=document.createElement('a');
 aEL3.textContent='Shoes category';
-aEL3.href='category.html';
+aEL3.href='category.html#shoseSection';
 shoesdivEl.appendChild(aEL3);
 let aEL4=document.createElement('a');
 aEL4.textContent='Tools category';
-aEL4.href='category.html';
+aEL4.href='category.html#toolsSection';
 toolsdivEl.appendChild(aEL4);
 
 
 
 
-  
+
 let clothesimgEl=document.createElement('img');
 clothesimgEl.setAttribute('src', chlothes[clothesCatIn].filePath)
 clothesdivEl.appendChild(clothesimgEl);
@@ -212,7 +271,7 @@ let toolsimgEl=document.createElement('img');
 toolsimgEl.setAttribute('src', tools[toolsCatIn].filePath)
 toolsdivEl.appendChild(toolsimgEl);
 
-
+// renderImageCat()
 
 
 }
@@ -222,21 +281,18 @@ toolsdivEl.appendChild(toolsimgEl);
 
 // fill image item in its category in main page 
 
-
-
 generateCatalog();
 addToCategory();
 generateprductImage()
-renderImageCat();
-renderImagCatMain();
+// renderImageCat();
+// renderImagCatMain();
+
+
 
 
 // // fill image item in its category in main page 
 
-// let clothesCatIn;
-// let machineCatIn;
-// let shoesCatIn;
-// let toolsCatIn;
+
 
 
 // console.log(clothes)
