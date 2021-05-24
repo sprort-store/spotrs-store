@@ -15,10 +15,7 @@ let machinedivEl =document.getElementById("machinecat")
 let shoesdivEl =document.getElementById("shoescat")
 let toolsdivEl =document.getElementById("toolscat")
 
-// let clothsection = document.getElementById('clothesSection')
-// let machinesectionEl = document.getElementById('machinesection')
-// let shosesectionEl = document.getElementById('shoseSection')
-// let toolsectionEl = document.getElementById('toolsSection')
+
 
 
 
@@ -83,18 +80,18 @@ let toolsCatIn;
 
 // console.log(cart);
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart(a,b) {
+// function addSelectedItemToCart(a,b) {
 
-  cart.addItem(a,b);
+//   cart.addItem(a,b);
 
 
   
-  // console.log(cart);
+//   // console.log(cart);
 
-  // TODO: suss out the item picked from the select list
-  // TODO: get the quantity
-  // TODO: using those, add one item to the Cart
-}
+//   // TODO: suss out the item picked from the select list
+//   // TODO: get the quantity
+//   // TODO: using those, add one item to the Cart
+// }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
