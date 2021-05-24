@@ -29,56 +29,56 @@ let toolsCatIn;
 
 
 
-function populateForm() {
+// function populateForm() {
 
-  let oldData = JSON.parse(localStorage.getItem('cart'));
-  if(oldData !== undefined & oldData !== null){
-    CartItem.allItems = oldData;
+//   let oldData = JSON.parse(localStorage.getItem('cart'));
+//   if(oldData !== undefined & oldData !== null){
+//     CartItem.allItems = oldData;
 
-    updateCounter();
-    updateCartPreview();
+//     updateCounter();
+//     updateCartPreview();
     
-  }
+//   }
   
   
   
   //TODO: Add an <option> tag inside the form's select for each product
-  const selectElement = document.getElementById('items');
-  let optionEl;
-  for (let i in Product.allProducts) {
-    optionEl = document.createElement('option');
-    optionEl.textContent = Product.allProducts[i].name;
+//   const selectElement = document.getElementById('items');
+//   let optionEl;
+//   for (let i in Product.allProducts) {
+//     optionEl = document.createElement('option');
+//     optionEl.textContent = Product.allProducts[i].name;
 
-    selectElement.appendChild(optionEl);
-  }
+//     selectElement.appendChild(optionEl);
+//   }
 
-}
-let a,b;
+// }
+// let a,b;
 
 // When someone submits the form, we need to add the selected item to the cart
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
-function handleSubmit(event) {
+// function handleSubmit(event) {
 
 
-  event.preventDefault();
-  // TODO: Prevent the page from reloading
-  a = event.target.items.value ;
-  b = event.target.quantity.value; 
-  // console.log(event.target.items.value); ///////////////////////////////////////
+//   event.preventDefault();
+//   // TODO: Prevent the page from reloading
+//   a = event.target.items.value ;
+//   b = event.target.quantity.value; 
+//   // console.log(event.target.items.value); ///////////////////////////////////////
 
-  // let quantityNumber = event.
+//   // let quantityNumber = event.
 
   
-  // Do all the things ...
-  addSelectedItemToCart(a, b);
-  cart.saveToLocalStorage();
+//   // Do all the things ...
+//   addSelectedItemToCart(a, b);
+//   cart.saveToLocalStorage();
 
 
-  updateCounter();
-  updateCartPreview();
+//   updateCounter();
+//   updateCartPreview();
 
-}
+// }
 
 
 // console.log(cart);
