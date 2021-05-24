@@ -24,8 +24,8 @@ Cart.allcart = []; // array
 Cart.prototype.addItem = function (product, quantity, price) { // function to add items 
 
 
-  //this.items = new CartItem(product, quantity);
-
+  this.items = new CartItem(product, quantity,price);
+  
   // console.log(Cart.allcart);
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
 
@@ -66,8 +66,8 @@ const CartItem = function (product, quantity, price) { //////////////////////
   this.price = price;
 
 
-
   CartItem.allItems.push(this);
+  
 
   // console.log(CartItem.allItems);
 };
