@@ -18,17 +18,17 @@ for( let j=0; j<chlothes.length ; j++)
   
   let clothdivEl = document.createElement('div');
   clothsection.appendChild(clothdivEl);
-  // let madivEl = document.createElement('div')
-  // machinesectionEl.appendChild(madivEl)
   let clothesimgEl=document.createElement('img');
   clothesimgEl.setAttribute('src',chlothes[j].filePath);
   clothdivEl.appendChild(clothesimgEl);
+  let chlthesLabel =document.createElement('label');
+  clothdivEl.appendChild(chlthesLabel);
+  chlthesLabel.textContent=chlothes[j].name;
+  let chlthesLabelp =document.createElement('label');
+  clothdivEl.appendChild(chlthesLabelp);
+  chlthesLabelp.textContent='$'+chlothes[j].price;
 }
-// for (let i = 0; i<machine.length;i++)
-// {
-//   let clothdivEl = document.createElement('div');
-//   machinesectionEl.appendChild(clothdivEl);
-// }
+
 
 
 
@@ -37,8 +37,7 @@ for( let j=0; j<machine.length ; j++)
   
   let machdivEl = document.createElement('div');
   machinesection.appendChild(machdivEl);
-  // let madivEl = document.createElement('div')
-  // machinesectionEl.appendChild(madivEl)
+
   let machimgEl=document.createElement('img');
   machimgEl.setAttribute('src',machine[j].filePath);
   machdivEl.appendChild(machimgEl);
