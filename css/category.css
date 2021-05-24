@@ -1,0 +1,23 @@
+img {height: 150px;
+width: 150px;
+display: inline-block;
+
+}
+
+
+div{display: inline-block;
+    
+    margin: 10px;
+    margin-bottom: 50px;
+    margin-right: 40px;}
+    label{display: block;}
+
+input
+{
+    display: inline;
+    
+}
+button
+{
+    display: block;
+}
