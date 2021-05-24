@@ -5,8 +5,10 @@ let machinesectionEl = document.getElementById('machinesection')
 let shosesectionEl = document.getElementById('shoseSection')
 let toolsectionEl = document.getElementById('toolsSection')
 const cart = new Cart([])
+let cartArr=[];
 generateCatalog();
   addToCategory();
+ let qu; 
 function renderImageCat()
 {
  
@@ -16,34 +18,44 @@ function renderImageCat()
 console.log(chlothes)
 for( let j=0; j<chlothes.length ; j++)
 {
-  
-  let clothdivEl = document.createElement('div');
+  let clothdivEl;
+  let clothesimgEl
+  let chlthesLabel
+  let chlthesLabelp
+  let quantityIn 
+  let quantityLabel
+  let clothBt
+  clothdivEl = document.createElement('div');
   clothsection.appendChild(clothdivEl);
-  let clothesimgEl=document.createElement('img');
+   clothesimgEl=document.createElement('img');
   clothesimgEl.setAttribute('src',chlothes[j].filePath);
   clothdivEl.appendChild(clothesimgEl);
-  let chlthesLabel =document.createElement('label');
+   chlthesLabel =document.createElement('label');
   clothdivEl.appendChild(chlthesLabel);
   chlthesLabel.textContent=chlothes[j].name;
-  let chlthesLabelp =document.createElement('label');
+   chlthesLabelp =document.createElement('label');
   clothdivEl.appendChild(chlthesLabelp);
   chlthesLabelp.textContent='$'+chlothes[j].price;
-  let quantityLabel = document.createElement('label')
-  quantityLabel.textContent = "Quantity"
+   quantityLabel = document.createElement('label')
+  quantityLabel.textContent= "Quantity"
   clothdivEl.appendChild(quantityLabel)
-  let quantityIn = document.createElement('input')
+   quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
+  quantityIn.id=`cloth${j}`
+  quantityIn.addEventListener('change',function(){qu=quantityIn.value})
   clothdivEl.appendChild(quantityIn)
-  let clothBt = document.createElement('button')
+ clothBt = document.createElement('button')
   clothdivEl.appendChild(clothBt)
   clothBt.textContent = "Add to Cart"
-  clothBt.addEventListener('click',cart.addItem(chlthesLabel.textContent,quantityIn.value,chlthesLabelp.textContent))
-
+  //clothBt.setAttribute('type', 'submit')
+  // clothBt.id = 
+  clothBt.setAttribute('onclick',`sendtoItem('${chlthesLabel.textContent}','${chlthesLabelp.textContent}','${quantityIn.id}')`)
+  // clothBt.addEventListener('click',)
+  
 }
   
-console.log(CartItem.allItems)
-
-
+//document.getElementById('cloth0').addEventListener('click',cart.addItem(chlthesLabel.textContent,quantityIn.value, parseInt(chlthesLabelp.textContent.substr(1))))
+//document.getElementById('cloth0').addEventListener('click',sendtoItem)
 for( let j=0; j<machine.length ; j++)
 {
   
@@ -64,10 +76,14 @@ for( let j=0; j<machine.length ; j++)
   machdivEl.appendChild(quantityLabel)
   let quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
+  quantityIn.id=`machine${j}`
+  quantityIn.addEventListener('change',function(){qu=quantityIn.value})
   machdivEl.appendChild(quantityIn)
   let machinBt = document.createElement('button')
   machdivEl.appendChild(machinBt)
   machinBt.textContent = "Add to Cart"
+  machinBt.setAttribute('onclick',`sendtoItem('${machinLabel.textContent}','${machineLabelp.textContent}','${quantityIn.id}')`)
+
 }
 for( let j=0; j<shoes.length ; j++)
 {
@@ -88,10 +104,14 @@ for( let j=0; j<shoes.length ; j++)
   shodivEl.appendChild(quantityLabel)
   let quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
+  quantityIn.id=`shoes${j}`
+  quantityIn.addEventListener('change',function(){qu=quantityIn.value})
   shodivEl.appendChild(quantityIn)
   let shosBt = document.createElement('button')
   shodivEl.appendChild(shosBt)
   shosBt.textContent = "Add to Cart"
+  shosBt.setAttribute('onclick',`sendtoItem('${shoseLabel.textContent}','${shoseLabelp.textContent}','${quantityIn.id}')`)
+
 }
 for( let j=0; j<tools.length ; j++)
 {
@@ -112,12 +132,28 @@ for( let j=0; j<tools.length ; j++)
   toodivEl.appendChild(quantityLabel)
   let quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
+  quantityIn.id=`tools${j}`
+  quantityIn.addEventListener('change',function(){qu=quantityIn.value})
   toodivEl.appendChild(quantityIn)
   let toolsBt = document.createElement('button')
   toodivEl.appendChild(toolsBt)
   toolsBt.textContent = "Add to Cart"
+  toolsBt.setAttribute('onclick',`sendtoItem('${toolsLabel.textContent}','${toolsLabelp.textContent}','${quantityIn.id}')`)
+
 }
 }
+
+
 renderImageCat();
 
+function sendtoItem(a,c,d)
+{
+  if(document.getElementById(`${d}`).value){
+    cart.addItem(a,qu, parseInt(c.substr(1)))
+    console.log(CartItem.allItems)
+  }
+  
+  
+  document.getElementById(`${d}`).value = null;
+}
 

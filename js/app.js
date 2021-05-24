@@ -26,7 +26,7 @@ Cart.prototype.addItem = function (product, quantity, price) { // function to ad
 
   this.items = new CartItem(product, quantity,price);
   
-  // console.log(Cart.allcart);
+   console.log('hello');
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
 
 };
