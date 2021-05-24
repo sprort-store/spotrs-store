@@ -204,8 +204,8 @@ function sendtoItem(a,c,d)
   if(document.getElementById(`${d}`).value){
     cart.addItem(a,qu, parseInt(c.substr(1)))
     console.log(CartItem.allItems)
+    cart.saveToLocalStorage();
   }
-  
   
   document.getElementById(`${d}`).value = null;
 }

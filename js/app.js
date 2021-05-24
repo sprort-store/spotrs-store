@@ -32,11 +32,11 @@ Cart.prototype.addItem = function (product, quantity, price) { // function to ad
 };
 
 Cart.prototype.saveToLocalStorage = function () {
-
-
-
+  
   let data = JSON.stringify(CartItem.allItems);
   localStorage.setItem('cart', data);
+
+
 
 
 
