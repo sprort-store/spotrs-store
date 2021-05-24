@@ -10,7 +10,9 @@
   background-color: #f5f5f5;
   font-family: 'Baloo Paaji 2', cursive;
   /* width: 960px; */
+
   margin-top: 30px;
+
 }
 
 .card {
@@ -263,3 +265,22 @@ header ul {
 header ul li:hover{
   padding-bottom: 5px;
 }
+
+/* .progress {
+	background-color: #ddd;
+	border-radius: 3px;
+	height: 5px;
+	width: 100%;
+} */
+
+/* .progress::after {
+	border-radius: 3px;
+	background-color: #2A265F;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5px;
+	width: 66%;
+} */
+
