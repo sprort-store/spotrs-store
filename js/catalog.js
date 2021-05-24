@@ -15,10 +15,7 @@ let machinedivEl =document.getElementById("machinecat")
 let shoesdivEl =document.getElementById("shoescat")
 let toolsdivEl =document.getElementById("toolscat")
 
-// let clothsection = document.getElementById('clothesSection')
-// let machinesectionEl = document.getElementById('machinesection')
-// let shosesectionEl = document.getElementById('shoseSection')
-// let toolsectionEl = document.getElementById('toolsSection')
+
 
 
 
@@ -29,72 +26,72 @@ let toolsCatIn;
 
 
 
-function populateForm() {
+// function populateForm() {
 
-  let oldData = JSON.parse(localStorage.getItem('cart'));
-  if(oldData !== undefined & oldData !== null){
-    CartItem.allItems = oldData;
+//   let oldData = JSON.parse(localStorage.getItem('cart'));
+//   if(oldData !== undefined & oldData !== null){
+//     CartItem.allItems = oldData;
 
-    updateCounter();
-    updateCartPreview();
+//     updateCounter();
+//     updateCartPreview();
     
-  }
+//   }
   
   
   
   //TODO: Add an <option> tag inside the form's select for each product
-  const selectElement = document.getElementById('items');
-  let optionEl;
-  for (let i in Product.allProducts) {
-    optionEl = document.createElement('option');
-    optionEl.textContent = Product.allProducts[i].name;
+//   const selectElement = document.getElementById('items');
+//   let optionEl;
+//   for (let i in Product.allProducts) {
+//     optionEl = document.createElement('option');
+//     optionEl.textContent = Product.allProducts[i].name;
 
-    selectElement.appendChild(optionEl);
-  }
+//     selectElement.appendChild(optionEl);
+//   }
 
-}
-let a,b;
+// }
+// let a,b;
 
 // When someone submits the form, we need to add the selected item to the cart
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
-function handleSubmit(event) {
+// function handleSubmit(event) {
 
 
-  event.preventDefault();
-  // TODO: Prevent the page from reloading
-  a = event.target.items.value ;
-  b = event.target.quantity.value; 
-  // console.log(event.target.items.value); ///////////////////////////////////////
+//   event.preventDefault();
+//   // TODO: Prevent the page from reloading
+//   a = event.target.items.value ;
+//   b = event.target.quantity.value; 
+//   // console.log(event.target.items.value); ///////////////////////////////////////
 
-  // let quantityNumber = event.
+//   // let quantityNumber = event.
 
   
-  // Do all the things ...
-  addSelectedItemToCart(a, b);
-  cart.saveToLocalStorage();
+//   // Do all the things ...
+//   addSelectedItemToCart(a, b);
+//   cart.saveToLocalStorage();
 
 
-  updateCounter();
-  updateCartPreview();
+//   updateCounter();
+//   updateCartPreview();
 
-}
+// }
 
 
 // console.log(cart);
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart(a,b) {
+// function addSelectedItemToCart(a,b) {
 
-  cart.addItem(a,b);
+//   cart.addItem(a,b);
 
 
   
-  // console.log(cart);
+//   // console.log(cart);
 
-  // TODO: suss out the item picked from the select list
-  // TODO: get the quantity
-  // TODO: using those, add one item to the Cart
-}
+//   // TODO: suss out the item picked from the select list
+//   // TODO: get the quantity
+//   // TODO: using those, add one item to the Cart
+// }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
