@@ -4,8 +4,8 @@ let shoes = [];
 let machine = [];
 let tools = [];
 
-
 // Cart constructor.
+
 
 const Cart = function (items) { ///////////////////////////
   // this.items is an array of CartItem instances.
@@ -73,6 +73,10 @@ const CartItem = function (product, quantity, price) { //////////////////////
 };
 
 CartItem.allItems = [];
+let cartItems = JSON.parse(localStorage.getItem('cart')) 
+if(cartItems !== null)
+{CartItem.allItems = cartItems;
+}
 
 // Product contructor.
 const Product = function (filePath, name, category, price) { ///////////////////
