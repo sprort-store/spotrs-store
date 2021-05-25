@@ -4,10 +4,11 @@ let clothsection = document.getElementById('clothesSection')
 let machinesectionEl = document.getElementById('machinesection')
 let shosesectionEl = document.getElementById('shoseSection')
 let toolsectionEl = document.getElementById('toolsSection')
-const cart = new Cart([])
-let cartArr=[];
+let countEl = document.getElementById('count')
+let cart = new Cart([])
+// let count=0;
 generateCatalog();
-
+//cart.saveToLocalStorage();
   addToCategory();
  let qu; 
 function renderImageCat()
@@ -144,18 +145,36 @@ for( let j=0; j<tools.length ; j++)
 }
 
 }
-
-
+//CloadCart();
+shupdateCount();
 renderImageCat();
 
 function sendtoItem(a,c,d)
 {
+  shupdateCount()
+  //CloadCart();
+  
   if(document.getElementById(`${d}`).value){
     cart.addItem(a,qu, parseInt(c.substr(1)))
-    console.log(CartItem.allItems)
     cart.saveToLocalStorage();
+    
+    
   }
   
+  console.log(CartItem.allItems)
   document.getElementById(`${d}`).value = null;
+  if(CartItem.allItems.length !== 0){
+    countEl.textContent = `(${CartItem.allItems.length})`;}
+  
+
+}
+function shupdateCount() {
+  countEl.textContent=""
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+   cart = new Cart(cartItems);
+  if( cart.items.length !== 0 ){
+    countEl.textContent = `(${cart.items.length})`;
+  }
 }
 
+// cart.saveToLocalStorage();

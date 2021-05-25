@@ -6,12 +6,12 @@ const table = document.getElementById('cart');
 // table.addEventListener('click', removeItemFromCart);
 let cart;
 
-
+let cartcountEl = document.getElementById('count')
 function loadCart() {
   const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
   cart = new Cart(cartItems);
 }
-
+//let formEl= document.getElementById("new-user")
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
 function renderCart() {
@@ -96,6 +96,7 @@ function removeItemFromCart(event) {
   localStorage.setItem('cart', data);
 
   loadCart();  
+  cartupdateCount();
          
  }
 
@@ -110,10 +111,19 @@ function removeItemFromCart(event) {
        sum=sum+billArray[i];
     }
     bbtnspanEl.textContent=sum;
+    // formEl.hidden = false;
   }
 
-
-
+  function cartupdateCount() {
+    cartcountEl.textContent=""
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = new Cart(cartItems);
+    if(cart.items.length !== 0){
+      cartcountEl.textContent = `(${cart.items.length})`;
+    }
+  }
+  
+cartupdateCount();
 // This will initialize the page and draw the cart on screen
 renderCart();
 console.log(cart)
