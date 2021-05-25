@@ -234,23 +234,7 @@ cursor: pointer;
 /* main{display: block;
 margin-top: 100px;} */
 
-form{
 
-  display: inline;
-  float: right;
-  position: absolute;
-  margin-right: -70px;
-  margin-top: 400px;
-  right:50px;
-  width: 450px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: #050A30;
-  box-sizing: border-box;
-  border-radius: 10px;
-  font-family: 'Righteous', cursive;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-  }
 
 
 

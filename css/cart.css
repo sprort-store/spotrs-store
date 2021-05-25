@@ -4,16 +4,16 @@ body{
   margin-right: auto;
 }
 table
-{
+{ display: inline-grid;
     display: table;
     border-color:#B1D4E0;
     border-style:solid;
-    border-width: 0.5em;
+     border-width: 0.5em; 
     float: left;
     width: 450px;
     border-radius: 15px;
     position: relative;
-    margin-top: 100px;
+    margin-top: 150px ;
 }
  th{
     display: table-cell;
@@ -43,6 +43,7 @@ border-color:#B1D4E0;
 padding: 1em;
 border-style:solid;
 border-width: 5px;
+
 }
 legend
 {
@@ -62,7 +63,7 @@ legend
     font-size: 16px;
     cursor: pointer;
     position: relative;
-    top:500px;
+    /* top:200px; */
 }
 
 #footer{
@@ -99,3 +100,262 @@ legend
       color: #fff;
       padding-left: 10px;
     }
+    form{
+
+      display: inline-block;
+      display: none;
+      /* position: relative; */
+      margin-left: 800px;
+      /*margin-top: 10px; */
+      right:50px;
+      width: 450px;
+      padding: 40px;
+      padding-right: 15px;
+      transform: translate(-50%, -50%);
+      background: #050A30;
+      box-sizing: border-box;
+      border-radius: 10px;
+      font-family: 'Righteous', cursive;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      }
+  
+
+#tablesec
+{ width: 15%;
+  display: inline-block;
+float: left ;
+
+
+}
+    
+#formsec
+{width: 85% ;
+   display: inline-block;
+  margin-top: 400px;
+
+  float:left ;
+}
+
+
+/* body {
+  margin: 10%;
+  padding-top: 30%;
+} */
+.truck {
+  display: none;
+  content: 'GoodBay ';
+  
+  position: absolute;
+  width: 20em;
+  height: 15em;
+  font-size: 25px;
+  background-color: rgb(226, 70, 70);
+  color: #020202;
+  border-radius: 0.7em;
+  position: relative;
+  animation: 
+      put-put 2s infinite,
+      move 10s infinite;
+}
+#bill {
+  
+    border: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  #bill:after {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     background-color: #1FD1F9;
+  background-image: linear-gradient(315deg, #1FD1F9 0%, #B621FE 74%);
+    transition: all 0.3s ease;
+  }
+  #bill:hover {
+    background: transparent;
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    color: #fff;
+  }
+  #bill:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  }
+
+@keyframes myAnimation {
+  100% {
+    -webkit-filter: hue-rotate(180deg) drop-shadow(3px 3px 8px rgb(165, 12, 12));
+    filter: hue-rotate(180deg) drop-shadow(3px 3px 8px rgb(7, 247, 235));
+  }	
+}
+@keyframes put-put {
+  0% {
+      margin-top: 0;
+      height: 5em;
+  }
+  5% {
+      margin-top: -0.2em;
+      height: 5.2em;
+  }
+  20% {
+      margin-top: -0.1em;
+      height: 5em;
+  }
+  35% {
+      margin-top: 0.1em;
+      height: 4.9em;
+  }
+  40% {
+      margin-top: -0.1em;
+      height: 5.1em;
+  }
+  60% {
+      margin-top: 0.1em;
+      height: 4.9em;
+  }
+  75% {
+      margin-top: 0;
+      height: 5em;
+  }
+  80% {
+      margin-top: -0.4em;
+      height: 5.2em;
+  }
+  100% {
+      margin-top: 0.1em;
+      height: 4.9em;
+  }
+}
+@keyframes move {
+  0% {
+      margin-left: 90%;
+  }
+  50% {
+      margin-left: 45%;
+  }
+  100% {
+      margin-left: 0;
+  }
+  0%, 100% {
+      filter: opacity(0);
+  }
+  10%, 90% {
+      filter: opacity(1);
+  }
+}
+.truck::before,
+.truck::after,
+.cab::after {
+  content: ' ';
+  position: absolute;
+  box-sizing: border-box;
+  width: 2em;
+  height: 2em;
+  background-color: rgb(36, 32, 32);
+  border: 0.1em solid white;
+  border-radius: 50%;
+  bottom: -1em;
+}
+.truck::before {
+  
+  left: 0.6em;
+}
+.truck::after {
+  right: 0.6em;
+}
+.cab {
+  
+  position: absolute;
+  width: 3.3em;
+  height: 2.5em;
+  background-color: rgb(36, 32, 32);
+  left: -3.5em;
+  bottom: 0;
+  border-radius: 40% 0 0.4em 0.4em;
+}
+.cab::before {
+  content: '';
+  position: absolute;
+  width: 2em;
+  height: 1.5em;
+  background-color: #333;
+  top: -1.5em;
+  right: 0;
+  border-radius: 100% 0 0 0;
+}
+.cab::after {
+  left: 0.5em;
+}
+.smoke,
+.smoke::before,
+.smoke::after {
+  content: 'Delivaring ';
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  background-color: rgb(13, 166, 218);
+  right: -0.1em;
+  bottom: -0.5em;
+  border-radius: 50%;
+  font-size:large;
+}
+.smoke {
+  animation:
+      drift 2s infinite,
+      smoke-1 3s infinite;
+}
+.smoke::before {
+  animation: 
+      drift 3s infinite,
+      smoke-2 3s infinite;
+}
+.smoke::after {
+  animation: 
+      drift 4s infinite,
+      smoke-3 4s infinite;
+}
+@keyframes drift {
+  0%, 100% {
+      filter: opacity(0);
+  }
+  15% {
+      filter: opacity(0.9);
+  }
+}
+@keyframes smoke-1 {
+  to {
+      width: 3em;
+      height: 3em;
+      right: -3em;
+      bottom: 0.5em;
+  }
+}
+@keyframes smoke-2 {
+  to {
+      width: 2.5em;
+      height: 2.5em;
+      right: -6em;
+      bottom: 0.8em;
+  }
+}
+@keyframes smoke-3 {
+  to {
+      width: 3.5em;
+      height: 3.5em;
+      right: -4em;
+      bottom: 0.2em;
+  }
+}
+
+.truck {margin-top: 20px;
+}
