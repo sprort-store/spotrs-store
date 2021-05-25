@@ -39,7 +39,7 @@ for( let j=0; j<chlothes.length ; j++)
   clothdivEl.appendChild(chlthesLabelp);
   chlthesLabelp.textContent='$'+chlothes[j].price;
    quantityLabel = document.createElement('label')
-  quantityLabel.textContent= "Quantity"
+  quantityLabel.textContent= "Quantity:"
   clothdivEl.appendChild(quantityLabel)
    quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
@@ -74,7 +74,7 @@ for( let j=0; j<machine.length ; j++)
   machdivEl.appendChild(machineLabelp);
   machineLabelp.textContent='$'+machine[j].price;
   let quantityLabel = document.createElement('label')
-  quantityLabel.textContent = "Quantity"
+  quantityLabel.textContent = "Quantity:"
   machdivEl.appendChild(quantityLabel)
   let quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
@@ -102,7 +102,7 @@ for( let j=0; j<shoes.length ; j++)
   shodivEl.appendChild(shoseLabelp);
   shoseLabelp.textContent='$'+shoes[j].price;
   let quantityLabel = document.createElement('label')
-  quantityLabel.textContent = "Quantity"
+  quantityLabel.textContent = "Quantity:"
   shodivEl.appendChild(quantityLabel)
   let quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
@@ -130,7 +130,7 @@ for( let j=0; j<tools.length ; j++)
   toodivEl.appendChild(toolsLabelp);
   toolsLabelp.textContent='$'+tools[j].price;
   let quantityLabel = document.createElement('label')
-  quantityLabel.textContent = "Quantity"
+  quantityLabel.textContent = "Quantity:"
   toodivEl.appendChild(quantityLabel)
   let quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
