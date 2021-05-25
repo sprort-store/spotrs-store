@@ -95,7 +95,7 @@ let toolsCatIn;
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
-  let name = document.getElementById('itemCount');
+  let name = document.getElementById('count');
 
   if(CartItem.allItems.length !== 0){
     name.textContent = `(${CartItem.allItems.length})`;
@@ -273,7 +273,7 @@ toolsdivEl.appendChild(toolsimgEl);
 
 
 }
-
+updateCounter();
 // fill image item in its category in category page 
 
 
