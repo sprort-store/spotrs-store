@@ -224,3 +224,42 @@ cursor: pointer;
 .flip-box:last-child{
   margin-left: 440px;
 }
+
+#footer{
+  position: relative;
+  /* top:100px; */
+  width: 100%;
+  /* margin-top: 100px; */
+  
+    }
+  #footer img{
+     width: 100%;
+     height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    #footer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+  
+    }
+  
+  footer ul{
+  display: inline;
+  }
+  footer ul li{
+    float: left;
+    position: relative;
+    bottom: 50px;
+    left: 60px;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding-left: 10px;
+  
+  
+  }
+  
