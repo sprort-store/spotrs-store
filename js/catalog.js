@@ -254,20 +254,20 @@ toolsdivEl.appendChild(aEL4);
 
 let clothesimgEl=document.createElement('img');
 clothesimgEl.setAttribute('src', chlothes[clothesCatIn].filePath)
-clothesdivEl.appendChild(clothesimgEl);
+// clothesdivEl.appendChild(clothesimgEl);
 
 
 let machineimgEl=document.createElement('img');
 machineimgEl.setAttribute('src', machine[machineCatIn].filePath)
-machinedivEl.appendChild(machineimgEl);
+// machinedivEl.appendChild(machineimgEl);
 
 let shoesimgEl=document.createElement('img');
 shoesimgEl.setAttribute('src', shoes[shoesCatIn].filePath)
-shoesdivEl.appendChild(shoesimgEl);
+// shoesdivEl.appendChild(shoesimgEl);
 
 let toolsimgEl=document.createElement('img');
 toolsimgEl.setAttribute('src', tools[toolsCatIn].filePath)
-toolsdivEl.appendChild(toolsimgEl);
+// toolsdivEl.appendChild(toolsimgEl);
 
 // renderImageCat()
 
