@@ -67,12 +67,6 @@ function showCart() {
   }
 
 
-
-  // TODO: Iterate over the items in the cart
-  // TODO: Create a TR
-  // TODO: Create a TD for the delete link, quantity,  and the item
-  // TODO: Add the TR to the TBODY and each of the TD's to the TR
-
 }
 
 
@@ -83,15 +77,10 @@ function showCart() {
 function removeItemFromCart(event) {
 
   tableEl = document.getElementById('ta');
-  console.log(event.parentNode.parentNode.rowIndex)
   cart.items.splice((event.parentNode.parentNode.rowIndex) - 1, 1)
-
   billArray.splice((event.parentNode.parentNode.rowIndex) - 1, 1)
-  console.log(billArray);
   tableEl.deleteRow(event.parentNode.parentNode.rowIndex);
-  console.log(event.parentNode.parentNode.rowIndex);
   localStorage.removeItem('cart');
-  console.log(cart);
   let data = JSON.stringify(cart.items);
   localStorage.setItem('cart', data);
 
@@ -129,4 +118,3 @@ function cartupdateCount() {
 cartupdateCount();
 // This will initialize the page and draw the cart on screen
 renderCart();
-console.log(cart)
