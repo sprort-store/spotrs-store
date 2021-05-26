@@ -395,11 +395,9 @@ fieldset {
       transform: scale(1.15) rotate(0);
     }
   }
-
-
   #footer{
 position: relative;
-top:100px;
+top:500px;
 width: 100%;
 margin-top: 100px;
 
