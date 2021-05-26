@@ -109,6 +109,7 @@ function billCalc() {
   let sum = 0;
   document.getElementById('new-user').style.display = 'block';
   document.getElementById('track').style.display = 'block';
+  document.getElementById('bill').style.display = 'block';
   for (let i = 0; i < billArray.length; i++) {
     sum = sum + billArray[i];
   }

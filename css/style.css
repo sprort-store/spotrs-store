@@ -47,7 +47,7 @@ header ul li a {
     color: #fff;
     display:block;
     padding:1em 2em;
-    transform:skew(25deg);
+    transform:skew(50deg);
 }
 
 header ul li {
