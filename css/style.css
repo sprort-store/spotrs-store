@@ -1,13 +1,15 @@
+
+* {
+  box-sizing: border-box;
+}
+
 body{
-  width: 75%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
  
 }
 
-* {
-    box-sizing: border-box;
-  }
 
 fieldset{
     display: block;
@@ -29,14 +31,14 @@ h1{
     font-family: 'Anton', sans-serif;
     padding-left: 5px;
     position: relative;
-    left:-100px;
+    /* left:100px; */
 }
 #logo{
     float: left;
     /* margin-left: 20px; */
     margin-top: 20px;
     position: relative;
-    left:-100px;
+    /* left:100px; */
     width:60px;
 }
 h1 em{
@@ -44,10 +46,15 @@ h1 em{
 }
 header ul li a {
     text-decoration: none;
+    position: relative;
     color: #fff;
     display:block;
     padding:1em 2em;
-    transform:skew(50deg);
+
+    transform:skew(25deg);
+    width: 130px;
+    text-align: center;
+
 }
 
 header ul li {
@@ -59,11 +66,12 @@ header ul li {
     float:right;
     text-transform:uppercase;
     border-radius: 7px;
+    
 }
 header ul {
     display:inline-block;
     position: absolute;
-    top: 80px;
+    top: 40px;
     right: 60px;
     list-style:none;
     transform:skew(-25deg);
@@ -117,9 +125,10 @@ header ul li:hover{
 
 .categories a{
   text-decoration: none;
-  position: absolute;
-  top:150px;
-  left:260px;
+  position: relative;
+  top:-50px;
+  left:10px;
+  font-weight: 600;
   font-family: 'Kanit', sans-serif;
   border-bottom: 1px solid #050A30;
 }
@@ -127,12 +136,17 @@ header ul li:hover{
 .firstDIV{
 display: inline-block;
 margin-right:200px ;
+
 }
 .secDIV{
-  display: inline-block;
+  display: inline;
   margin-left: 100px;
 }
 
+.empty{
+  width: 200px;
+  height: 40px;
+}
 .catContainer{
   position: relative;
   min-width: 250px;
@@ -146,44 +160,71 @@ margin-right:200px ;
 }
 
 
+  #clothescat{
+    width:200px;
+    height: 250px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 15px;
+    background-image: url('/img/clothes/adidas\ suite.jpg');
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    background-size: 100% 100%;
+    animation: clothesAnime 20s infinite linear; 
  
-.catContainer #clothescat img {
-   width:200px;
-   height: 250px;
-   position: absolute;
-   top: 20px;
-   left: 20px;
-   right: 20px;
-   bottom: 20px;
-   border-radius: 15px;
-   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-   transition: 0.5s;
-
-    
+  }
+@keyframes clothesAnime{
+  20%{
+background-image: url('/img/clothes/Q6.jpg');
+  }
+40%{
+  background-image: url('/img/clothes/Q7.jpg');
 }
-.catContainer #clothescat img:hover{
-  transform: translateY(-50px);
-  box-shadow: 0 40px 50px rgba(0,0,0,0.5);
+80%{
+  background-image: url('/img/clothes/Q2.jpg');
 }
-#machinecat img{   
-    width:200px;
-    height: 250px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    border-radius: 15px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    transition: 0.5s;
-    
+100%{
+  background-image: url('/img/clothes/Q4.jpg');
+}
 }
 
-.catContainer #machinecat img:hover{
-  transform: translateY(-50px);
-  box-shadow: 0 40px 50px rgba(0,0,0,0.5);
+
+
+#machinecat {   
+    width:200px;
+    height: 250px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    background-image: url('/img/machine/M1.jpg');
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    background-size: 100% 100%;
+    animation: machineAnime 20s infinite linear;
+    /* margin-top: 0px; */
 }
-.catContainer #shoescat img{   
+
+@keyframes machineAnime{
+  20%{
+background-image: url('/img/machine/M2.jpg');
+  }
+40%{
+  background-image: url('/img/machine/M4.jpg');
+}
+80%{
+  background-image: url('/img/machine/M7.jpg');
+}
+100%{
+  background-image: url('/img/machine/M9.jpg');
+}
+}
+
+ #shoescat {   
     width:200px;
     height: 250px;
     position: absolute;
@@ -193,13 +234,28 @@ margin-right:200px ;
     bottom: 20px;
     border-radius: 15px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    transition: 0.5s;
+    background-image: url('/img/shoes/S2.jpg');
+    background-size: 100% 100%;
+    animation: shoesAnime 20s infinite linear;
     }
-    .catContainer #shoescat img:hover{
-      transform: translateY(-50px);
-      box-shadow: 0 40px 50px rgba(0,0,0,0.5);
-   }
-   .catContainer #toolscat img{   
+    
+    @keyframes shoesAnime{
+      20%{
+    background-image: url('/img/shoes/S4.jpg');
+      }
+    40%{
+      background-image: url('/img/shoes/S6.jpg');
+    }
+    80%{
+      background-image: url('/img/shoes/S8.jpeg');
+    }
+    100%{
+      background-image: url('/img/shoes/S7.jpg');
+    }
+    }
+    
+  
+    #toolscat {   
     width:200px;
     height: 250px;
     position: absolute;
@@ -209,12 +265,29 @@ margin-right:200px ;
     bottom: 20px;
     border-radius: 15px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    transition: 0.5s;
+    background-image: url('/img/tools/T5.jpg');
+    background-size: 100% 100%;
+    animation: toolsAnime 20s infinite linear;
     }
-    .catContainer #toolscat img:hover{  
-      transform: translateY(-50px);
-     box-shadow: 0 40px 50px rgba(0,0,0,0.5); 
-   }
+    
+     
+    @keyframes toolsAnime{
+      20%{
+    background-image: url('/img/tools/T2.jpeg');
+      }
+    40%{
+      background-image: url('/img/tools/T8.jpg');
+    }
+    80%{
+      background-image: url('/img/tools/T2.jpeg');
+    }
+    100%{
+      background-image: url('/img/tools/T9.jpg');
+    }
+    }
+
+
+
 #ShOthbutt{
   position: relative;
   right:500px;
@@ -230,9 +303,6 @@ cursor: pointer;
   color: #F51720;
 }
 
-/* header{position: relative;} */
-/* main{display: block;
-margin-top: 100px;} */
 
 
 
@@ -361,5 +431,14 @@ footer ul li{
   transform: translate(-50%, -50%);
   color: #fff;
   padding-left: 10px;
+
+
+}
+#count{
+  color: #fff;
+position: fixed;
+top:15px;
+left:350px;
+
 
 }
