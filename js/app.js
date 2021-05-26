@@ -4,11 +4,9 @@ let shoes = [];
 let machine = [];
 let tools = [];
 
-// Cart constructor.
 
 
-const Cart = function (items) { ///////////////////////////
-  // this.items is an array of CartItem instances.
+const Cart = function (items) {
   this.items = items;
 
 
@@ -21,18 +19,16 @@ Cart.allcart = []; // array
 
 
 
-Cart.prototype.addItem = function (product, quantity, price) { // function to add items 
+Cart.prototype.addItem = function (product, quantity, price) {
 
 
-  this.items = new CartItem(product, quantity,price);
-  
-   console.log('hello');
-  // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  this.items = new CartItem(product, quantity, price);
+
 
 };
 
 Cart.prototype.saveToLocalStorage = function () {
-  
+
   let data = JSON.stringify(CartItem.allItems);
   localStorage.setItem('cart', data);
 
@@ -40,12 +36,10 @@ Cart.prototype.saveToLocalStorage = function () {
 
 
 
-  // TODO: Fill in this instance method to save the contents of the cart to localStorage
 };
 
 Cart.prototype.removeItem = function (item) {
-  // TODO: Fill in this instance method to remove one item from the cart.
-  // Note: You will have to decide what kind of parameter to pass in here!
+
 };
 function generateprductImage() {
   let randomIndex = [];
@@ -67,15 +61,15 @@ const CartItem = function (product, quantity, price) { //////////////////////
 
 
   CartItem.allItems.push(this);
-  
 
-  // console.log(CartItem.allItems);
+
+
 };
 
 CartItem.allItems = [];
-let cartItems = JSON.parse(localStorage.getItem('cart')) 
-if(cartItems !== null)
-{CartItem.allItems = cartItems;
+let cartItems = JSON.parse(localStorage.getItem('cart'))
+if (cartItems !== null) {
+  CartItem.allItems = cartItems;
 }
 
 // Product contructor.
@@ -145,24 +139,5 @@ function addToCategory() {
     if (Product.allProducts[i].category == 'shoes') { shoes[i % 10] = Product.allProducts[i]; }
     if (Product.allProducts[i].category == 'machine') { machine[i % 10] = Product.allProducts[i]; }
     if (Product.allProducts[i].category == 'tools') { tools[i % 10] = Product.allProducts[i]; }
-    // else { console.log('Wrong category'); }
   }
 }
-//let clothessectionEl = document.getElementById('clothesSection')
-
-// renderImageCat();
-
-console.log(chlothes);
-console.log(shoes);
-console.log(tools);
-console.log(machine);
-console.log(Product.allProducts);
-console.log(generateprductImage());
-// let chlothes = [];
-// let shoes = [];
-// let machine = [];
-// // let tools = [];
-
-
-
-// Initialize the app by creating the big list of products with images and names
