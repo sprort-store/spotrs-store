@@ -11,6 +11,7 @@ generateCatalog();
 //cart.saveToLocalStorage();
   addToCategory();
  let qu; 
+ 
 function renderImageCat()
 {
  
@@ -26,7 +27,9 @@ for( let j=0; j<chlothes.length ; j++)
   let chlthesLabelp
   let quantityIn 
   let quantityLabel
-  let clothBt
+  let reqlableEl = document.createElement('lable')
+  reqlableEl.id = `reqcloth${j}`
+  let clothBt;
   clothdivEl = document.createElement('div');
   clothsection.appendChild(clothdivEl);
    clothesimgEl=document.createElement('img');
@@ -41,6 +44,7 @@ for( let j=0; j<chlothes.length ; j++)
    quantityLabel = document.createElement('label')
   quantityLabel.textContent= "Quantity:"
   clothdivEl.appendChild(quantityLabel)
+  clothdivEl.appendChild(reqlableEl)
    quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
   quantityIn.id=`cloth${j}`
@@ -51,7 +55,7 @@ for( let j=0; j<chlothes.length ; j++)
   clothBt.textContent = "Add to Cart"
   //clothBt.setAttribute('type', 'submit')
   // clothBt.id = 
-  clothBt.setAttribute('onclick',`sendtoItem('${chlthesLabel.textContent}','${chlthesLabelp.textContent}','${quantityIn.id}')`)
+  clothBt.setAttribute('onclick',`sendtoItem('${chlthesLabel.textContent}','${chlthesLabelp.textContent}','${quantityIn.id}','${reqlableEl.id}')`)
   // clothBt.addEventListener('click',)
   
 }
@@ -63,7 +67,8 @@ for( let j=0; j<machine.length ; j++)
   
   let machdivEl = document.createElement('div');
   machinesection.appendChild(machdivEl);
-
+  let reqlableEl = document.createElement('lable')
+  reqlableEl.id = `reqmachine${j}`
   let machimgEl=document.createElement('img');
   machimgEl.setAttribute('src',machine[j].filePath);
   machdivEl.appendChild(machimgEl);
@@ -76,6 +81,7 @@ for( let j=0; j<machine.length ; j++)
   let quantityLabel = document.createElement('label')
   quantityLabel.textContent = "Quantity:"
   machdivEl.appendChild(quantityLabel)
+    machdivEl.appendChild(reqlableEl)
   let quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
   quantityIn.id=`machine${j}`
@@ -84,14 +90,16 @@ for( let j=0; j<machine.length ; j++)
   let machinBt = document.createElement('button')
   machdivEl.appendChild(machinBt)
   machinBt.textContent = "Add to Cart"
-  machinBt.setAttribute('onclick',`sendtoItem('${machinLabel.textContent}','${machineLabelp.textContent}','${quantityIn.id}')`)
-
+  machinBt.setAttribute('onclick',`sendtoItem('${machinLabel.textContent}','${machineLabelp.textContent}','${quantityIn.id}','${reqlableEl.id}')`)
+  // machdivEl.appendChild(reqlable)
 }
 for( let j=0; j<shoes.length ; j++)
 {
   
   let shodivEl = document.createElement('div');
   shoseSection.appendChild(shodivEl);
+  let reqlableEl = document.createElement('lable')
+  reqlableEl.id = `reqshos${j}`
   let shoimgEl=document.createElement('img');
   shoimgEl.setAttribute('src',shoes[j].filePath);
   shodivEl.appendChild(shoimgEl);
@@ -104,22 +112,26 @@ for( let j=0; j<shoes.length ; j++)
   let quantityLabel = document.createElement('label')
   quantityLabel.textContent = "Quantity:"
   shodivEl.appendChild(quantityLabel)
+  shodivEl.appendChild(reqlableEl)
   let quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
   quantityIn.id=`shoes${j}`
   quantityIn.addEventListener('change',function(){qu=quantityIn.value})
   shodivEl.appendChild(quantityIn)
+  
   let shosBt = document.createElement('button')
   shodivEl.appendChild(shosBt)
   shosBt.textContent = "Add to Cart"
-  shosBt.setAttribute('onclick',`sendtoItem('${shoseLabel.textContent}','${shoseLabelp.textContent}','${quantityIn.id}')`)
-
+  shosBt.setAttribute('onclick',`sendtoItem('${shoseLabel.textContent}','${shoseLabelp.textContent}','${quantityIn.id}','${reqlableEl.id}')`)
+  // shodivEl.appendChild(reqlable)
 }
 for( let j=0; j<tools.length ; j++)
 {
   
   let toodivEl = document.createElement('div');
   toolsSection.appendChild(toodivEl);
+  let reqlableEl = document.createElement('lable')
+  reqlableEl.id = `reqtools${j}`
   let tooimgEl=document.createElement('img');
   tooimgEl.setAttribute('src',tools[j].filePath);
   toodivEl.appendChild(tooimgEl);
@@ -132,6 +144,7 @@ for( let j=0; j<tools.length ; j++)
   let quantityLabel = document.createElement('label')
   quantityLabel.textContent = "Quantity:"
   toodivEl.appendChild(quantityLabel)
+  toodivEl.appendChild(reqlableEl)
   let quantityIn = document.createElement('input')
   quantityIn.setAttribute('type', 'number')
   quantityIn.id=`tools${j}`
@@ -140,7 +153,8 @@ for( let j=0; j<tools.length ; j++)
   let toolsBt = document.createElement('button')
   toodivEl.appendChild(toolsBt)
   toolsBt.textContent = "Add to Cart"
-  toolsBt.setAttribute('onclick',`sendtoItem('${toolsLabel.textContent}','${toolsLabelp.textContent}','${quantityIn.id}')`)
+  toolsBt.setAttribute('onclick',`sendtoItem('${toolsLabel.textContent}','${toolsLabelp.textContent}','${quantityIn.id}','${reqlableEl.id}')`)
+  // toodivEl.appendChild(reqlable)
 
 }
 
@@ -149,7 +163,7 @@ for( let j=0; j<tools.length ; j++)
 shupdateCount();
 renderImageCat();
 
-function sendtoItem(a,c,d)
+function sendtoItem(a,c,d,f)
 {
   shupdateCount()
   //CloadCart();
@@ -160,7 +174,11 @@ function sendtoItem(a,c,d)
     
     
   }
-  
+  else
+  {
+    document.getElementById(`${f}`).textContent='*required'
+
+  }
   console.log(CartItem.allItems)
   document.getElementById(`${d}`).value = null;
   if(CartItem.allItems.length !== 0){
