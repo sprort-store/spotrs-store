@@ -380,8 +380,7 @@ fieldset {
       transform: scale(1.15) rotate(0);
     }
   }
-<<<<<<< HEAD
-=======
+
   #footer{
 position: relative;
 top:600px;
@@ -401,4 +400,4 @@ width: 100%;
   transform: translate(-50%, -50%);
   color: #fff;
   }
->>>>>>> 466ca316d8e112e2ae0633a062c0bb82696c45c3
+
