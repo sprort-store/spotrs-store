@@ -116,5 +116,5 @@ function cartupdateCount() {
 }
 
 cartupdateCount();
-// This will initialize the page and draw the cart on screen
 renderCart();
+
