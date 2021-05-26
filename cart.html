@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Store-Cart</title>
-    
+    <!-- // to test -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@1,200&family=Righteous&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
         <h1>The <em>Sport</em> Store</h1>
         <img id="logo" src="./images/sportItem logo.PNG" alt="logo">
         <nav>
-            <ul>
+            <ul >
 
                
 
@@ -33,20 +33,28 @@
         </nav>
     </header>
     <main>
-
-        <table id="ta">
-            <tr>
-                <th> Item </th>
-                <th>Unit Price</th>
-                <th> Quntity </th>
-                <th>Total Price</th>
-                <th>Remove</th>
-            </tr>
-
-        </table>
-        <button id="bbtn"> Bill Now</button>
-        <span id="bill"></span>
-        <form action="" id="new-user" hidden>
+        <section id='tablesec'>
+            <table id="ta">
+                <tr id ='trid'>
+                    <th> Item </th>
+                    <th>Unit Price</th>
+                    <th> Quntity </th>
+                    <th>Total Price</th>
+                    <th>Remove</th>
+                </tr>
+    
+            </table>
+            <button id="bbtn"> Bill Now</button>
+            <span id="bill"></span>
+            <div id='track' class="truck" display="none">
+                <span class="cab"></span>
+                <span class="smoke"></span>
+             
+             </div>
+        </section>
+        
+    <section id='formsec'>
+        <form action="" id="new-user" display="none">
             <fieldset>
                 <h3>Adding a New User</h3>
                 <!-- <legend>Adding a New User</legend> -->
@@ -62,13 +70,15 @@
                     <select id="paying" name="paying" type="select" >
                         <option value="cash">Cash</option>
                         <option value="visa">Visa</option>
+                     
                     </select>
                 
                 <button id="submit" name="submit">Submit</button>
               
             </fieldset>
         </form>
-
+      
+    </section>
     </main>
     <footer id="footer">
         <img src="./images/footer logo.PNG" alt="">
@@ -79,6 +89,7 @@
             <li><i class="fab fa-linkedin-in"></i></li>
             <li><i class="fab fa-instagram"></i></li>
         </ul>
+       
             </footer>
         
     <script src="js/app.js"></script>
