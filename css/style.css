@@ -306,7 +306,7 @@ cursor: pointer;
 
 
 
-
+/*test pull*/
 
 fieldset {
     position: relative;
@@ -431,7 +431,12 @@ footer ul li{
   transform: translate(-50%, -50%);
   color: #fff;
   padding-left: 10px;
+
+
 }
+
+
+
 #count{
   color: #fff;
 position: fixed;
